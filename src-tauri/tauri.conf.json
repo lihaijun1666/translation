@@ -1,0 +1,59 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Translation Reader",
+  "version": "0.1.0",
+  "identifier": "com.codex.translation.reader",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:1420",
+    "beforeDevCommand": "npm run dev -- --host 0.0.0.0 --port 1420",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Translation Reader",
+        "width": 1360,
+        "height": 860,
+        "minWidth": 960,
+        "minHeight": 640,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "fileAssociations": [
+      {
+        "ext": [
+          "pdf"
+        ],
+        "name": "PDF Document",
+        "description": "Open PDF files with Translation Reader",
+        "role": "Editor",
+        "mimeType": "application/pdf"
+      },
+      {
+        "ext": [
+          "txt"
+        ],
+        "name": "Text Document",
+        "description": "Open text files with Translation Reader",
+        "role": "Editor",
+        "mimeType": "text/plain"
+      }
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
